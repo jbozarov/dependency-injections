@@ -3,7 +3,7 @@ package com.jahongir.demo.services;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PeropertyInjectedServiceImplementation implements PropertyInjectedService {
+public class MyServiceImplementation implements MyService {
 
 	@Override
 	public String displayMessage(String message) {
