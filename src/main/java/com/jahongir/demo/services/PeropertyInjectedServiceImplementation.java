@@ -1,9 +1,9 @@
-package com.jahongir.demo.service;
+package com.jahongir.demo.services;
 
 import org.springframework.stereotype.Service;
 
 @Service
-public class MessageServiceImplementation implements MessageService {
+public class PeropertyInjectedServiceImplementation implements PropertyInjectedService {
 
 	@Override
 	public String displayMessage(String message) {
