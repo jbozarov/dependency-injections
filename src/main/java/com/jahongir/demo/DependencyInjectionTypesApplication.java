@@ -2,7 +2,9 @@ package com.jahongir.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
+import com.jahongir.demo.controllers.MessageController;
 import com.jahongir.demo.service.MessageService;
 import com.jahongir.demo.service.MessageServiceImplementation;
 
@@ -10,13 +12,13 @@ import com.jahongir.demo.service.MessageServiceImplementation;
 public class DependencyInjectionTypesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DependencyInjectionTypesApplication.class, args);
+		ApplicationContext context = SpringApplication.run(DependencyInjectionTypesApplication.class, args);
 		
-//		MessageServiceImplementation messageServiceImplementation = new MessageServiceImplementation(); 
-//		messageServiceImplementation.displayMessage("Tight Coupling!");
+		MessageController controller = (MessageController) context.getBean("messageController"); 
 		
-		MessageService messageService = new MessageServiceImplementation(); 
-		messageService.displayMessage("Tight Coupling 2");
+		System.out.println("This is a message from controller " + controller.getMessage());
+		
+		
 		
 		
 	}

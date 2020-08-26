@@ -1,11 +1,14 @@
 package com.jahongir.demo.service;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class MessageServiceImplementation implements MessageService {
 
 	@Override
-	public void displayMessage(String message) {
+	public String displayMessage(String message) {
 		
-		System.out.println("Hello " + message);
+		return "Hello " + message; 
 		
 	}
 
