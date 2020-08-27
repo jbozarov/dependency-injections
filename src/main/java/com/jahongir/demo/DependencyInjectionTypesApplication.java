@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import com.jahongir.demo.controllers.ConstructorInjectedController;
-import com.jahongir.demo.controllers.MyController;
-import com.jahongir.demo.services.MyService;
-import com.jahongir.demo.services.MyServiceImplementation;
+import com.jahongir.demo.controller.ConstructorController;
+import com.jahongir.demo.controller.MyController;
+import com.jahongir.demo.controller.PropertyController;
+import com.jahongir.demo.controller.SetterController;
 
 @SpringBootApplication
 public class DependencyInjectionTypesApplication {
@@ -15,14 +15,18 @@ public class DependencyInjectionTypesApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(DependencyInjectionTypesApplication.class, args);
 		
-		// Using tightly coupled injection
-		MyController controller = (MyController) context.getBean("myController"); 
-		System.out.println("This is a message from controller " + controller.getMessage());
+
+		MyController myController = ( MyController ) context.getBean("myController"); 
+		System.out.println(myController.getDisplayHello());
+
+		PropertyController propertyController = (PropertyController) context.getBean("propertyController"); 
+		System.out.println(propertyController.getDisplayHello());
+
+		ConstructorController constructorController = (ConstructorController) context.getBean("constructorController"); 
+		System.out.println(constructorController.getDisplayHello());
 		
-		// Using constructor injection 
-		ConstructorInjectedController constructorInjectedController = new ConstructorInjectedController(new MyServiceImplementation()); 
-		System.out.println(constructorInjectedController.getMessage());
-		
+		SetterController setterController = (SetterController) context.getBean("setterController"); 
+		System.out.println(setterController.getMyService().displayHello());
 		
 	}
 

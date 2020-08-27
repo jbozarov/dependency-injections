@@ -3,12 +3,12 @@ package com.jahongir.demo.services;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ConstructorInjectedImplementation implements MyService {
+public class SetterImplementation implements MyService{
 
 	@Override
 	public String displayHello() {
 		
-		return "I am ConstructorInjectedImplementation class"; 
+		return "I am SetterImplementation";
 	}
 
 }
