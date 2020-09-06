@@ -9,10 +9,11 @@ import com.jahongir.demo.services.MyService;
 @Controller
 public class SetterController {
 
-	@Autowired
-	@Qualifier("setterImplementation")
+	
 	private MyService myService;
 
+	@Autowired
+	@Qualifier("setterImplementation")
 	public void setMyService( MyService myService) {
 		this.myService = myService;
 	} 
