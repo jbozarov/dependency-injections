@@ -3,6 +3,7 @@ package com.jahongir.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 import com.jahongir.demo.controller.ConstructorController;
 import com.jahongir.demo.controller.MyController;
@@ -10,6 +11,7 @@ import com.jahongir.demo.controller.PropertyController;
 import com.jahongir.demo.controller.SetterController;
 
 @SpringBootApplication
+@ComponentScan(basePackages = {"com.jahongir.demo", "some.more.packages"})
 public class DependencyInjectionTypesApplication {
 
 	public static void main(String[] args) {
