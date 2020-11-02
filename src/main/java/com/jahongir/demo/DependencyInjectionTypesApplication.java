@@ -16,7 +16,6 @@ public class DependencyInjectionTypesApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(DependencyInjectionTypesApplication.class, args);
-		
 
 		MyController myController = ( MyController ) context.getBean("myController"); 
 		System.out.println(myController.getDisplayHello());
