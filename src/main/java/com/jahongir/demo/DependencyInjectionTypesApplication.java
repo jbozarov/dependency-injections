@@ -1,5 +1,6 @@
 package com.jahongir.demo;
 
+import com.jahongir.demo.services.ConstructorInjectedImplementation;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -28,6 +29,9 @@ public class DependencyInjectionTypesApplication {
 		
 		SetterController setterController = (SetterController) context.getBean("setterController"); 
 		System.out.println(setterController.getMyService().displayHello());
+
+		ConstructorInjectedImplementation ser = (ConstructorInjectedImplementation) context.getBean("constructorInjectedImplementation");
+		System.out.println(ser.displayHello());
 		
 	}
 
